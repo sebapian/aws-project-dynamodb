@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
+import { sendFeedback } from '../apiClient'
 
 function Submit() {
   const [submission, setSubmission] = useState({})
@@ -12,6 +13,7 @@ function Submit() {
   async function handleSubmit(e) {
     e.preventDefault()
     console.log(submission)
+    await sendFeedback(submission)
   }
 
   return(

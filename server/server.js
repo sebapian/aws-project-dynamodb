@@ -14,4 +14,8 @@ server.get('/feedback', (req, res) => {
   res.json({ feedback: feedback })
 })
 
+server.post('/feedback', async (req, res) => {
+  console.log(req.body)
+})
+
 module.exports = server
